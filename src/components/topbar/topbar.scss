@@ -1,0 +1,89 @@
+@import "../../global.scss";
+
+
+.topbar{
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    transition: all 1s ease-in-out;
+
+    .wrapper{
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+        .left{
+            display: flex;
+            justify-content: space-between;
+
+            .logo{
+                width: 60px;
+                margin-right: 40px;
+
+            }
+
+            .itemContainer{
+                display: flex;
+                align-items: center;
+                padding: 0 10px;
+                
+
+                .icon{
+                    
+                    padding: 0px 10px;
+                    font-size: 18px;
+                    margin-right: 5px;
+                    opacity: 1;
+                }
+
+            }
+             
+        }
+
+        .right{
+
+            .hamburger{
+                width: 32px;
+                height: 25px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                cursor: pointer;
+
+
+                span{
+                    width: 100%;
+                    height: 2px;
+                    background-color: #4d4d4e;
+                    transform-origin: left;
+                    transition: all 2s ease;
+                }
+            }
+        }
+    }
+
+    &.active{
+        background-color: #4d4d4e;
+
+        .hamburger{
+            span{
+                &:first-child{
+                    background-color: white;
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2){
+                    opacity: 0;
+                }
+                &:last-child{
+                    background-color: white;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
