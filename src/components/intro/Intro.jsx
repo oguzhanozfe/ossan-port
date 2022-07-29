@@ -1,5 +1,6 @@
 import './intro.scss';
 import React from 'react';
+import me from '../assets/me.png';
 import TypeAnimation from 'react-type-animation';
 
 
@@ -16,6 +17,9 @@ export default function Intro() {
           <br />
           Software Developer
         </h1>
+        <div className="imgcontainer">
+          <img className='me' src={me} alt="me" />
+        </div>
       </div>
       <div className="right">
         <div className="wrapper">
