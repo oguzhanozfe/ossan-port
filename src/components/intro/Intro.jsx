@@ -12,11 +12,9 @@ export default function Intro() {
         <h1>
           Hi,
           <br />
-          <TypeAnimation
-            cursor={false}
-            sequence={['React typing animation based on typical', 1000, '']}
-            wrapper="h1"
-          />
+          I'm <span className='name'>Oğuzhan Özdemir</span>
+          <br />
+          Software Developer
         </h1>
       </div>
       <div className="right">
