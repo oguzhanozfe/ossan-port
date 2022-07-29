@@ -1,6 +1,6 @@
 import React from 'react';
 import './topbar.scss';
-import LogoS from '../../images/logo.png'
+import LogoS from '../assets/logo.png';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faLinkedin, faGithub, faItchIo, faDiscord, faSpotify} from '@fortawesome/free-brands-svg-icons'
 
