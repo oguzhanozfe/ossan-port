@@ -1,31 +1,38 @@
 import './intro.scss';
 import React from 'react';
-import me from '../assets/me.png';
-import TypeAnimation from 'react-type-animation';
+import { init } from 'ityped'
+import { useEffect, useRef } from 'react';
+
 
 
 export default function Intro() {
+
+  const textRef = useRef();
+
+  useEffect(() => {
+    init(textRef.current, {
+      showCursor: false,
+      strings: ["Create","Build","Develop"],
+    });
+  }, [])
+  
 
 
   return (
     <div className='intro' id='intro'>
       <div className='left'>
-        <h1>
-          Hi,
-          <br />
-          I'm <span className='name'>Oğuzhan Özdemir</span>
-          <br />
-          Software Developer
-        </h1>
-        <div className="imgcontainer">
-          <img className='me' src={me} alt="me" />
-        </div>
+        <h1>Hi, </h1>
+        <h2>I'm Oguzhan Ozdemir</h2>
+        <h3>Software Developer</h3>
+        <h4>Need to help create things?</h4>
+        <a href='#contact' className='flat-button'>CONTACT ME</a>
       </div>
       <div className="right">
-        <div className="wrapper">
-
+        <div className="wrapper"> 
+        <h5>
+          <span ref={textRef}></span>
+        </h5>
         </div>
-
       </div>
     </div>
   )
