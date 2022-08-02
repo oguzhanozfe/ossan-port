@@ -1,23 +1,33 @@
-import './menu.scss';
-import React from 'react';
+import "./menu.scss";
+import React from "react";
 
-export default function Menu({menuOpen, setMenuOpen}) {
+export default function Menu({ menuOpen, setMenuOpen }) {
   return (
-    <div className={'menu ' + (menuOpen && "active")}>
-        <ul>
-            <li onClick={()=>setMenuOpen(false)}>
-                <a href="#intro">Home</a>
-            </li>
-            <li onClick={()=>setMenuOpen(false)}>
-                <a href="#about">About Me</a>
-            </li>            
-            <li onClick={()=>setMenuOpen(false)}>
-                <a href="#portfolio">My Works</a>
-            </li>            
-            <li onClick={()=>setMenuOpen(false)}>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
+    <div className={"menu " + (menuOpen && "active")}>
+      <ul>
+        <li onClick={() => setMenuOpen(false)}>
+          <a href="#intro">
+            <div className="menu-item">I Am GayBoy</div>
+          </a>
+        </li>
+        <li onClick={() => setMenuOpen(false)}>
+          <a href="#about">
+            <div className="menu-item">About Me</div>
+          </a>
+        </li>
+        <li onClick={() => setMenuOpen(false)}>
+          <a href="#portfolio">
+            <div className="menu-item">My Works</div>
+          </a>
+        </li>
+        <li onClick={() => setMenuOpen(false)}>
+          <div>
+            <a href="#contact">
+              <div className="menu-item">Contact</div>
+            </a>
+          </div>
+        </li>
+      </ul>
     </div>
-  )
+  );
 }

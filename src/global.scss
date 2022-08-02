@@ -3,3 +3,11 @@ $introcolor: #022E40;
 $aboutcolor: lightcoral;
 $portfoliocolor: bisque;
 $contactcolor: lightblue;
+
+$width: 768px;
+
+@mixin mobile {
+    @media (max-width: #{$width}) {
+        @content;
+    } 
+}

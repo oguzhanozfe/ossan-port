@@ -1,7 +1,14 @@
 @import "../../global.scss";
 
+
 .intro{
     display: flex;
+
+    @include mobile{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     
     .left{
         flex :0.6;

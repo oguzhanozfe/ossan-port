@@ -2,9 +2,11 @@ import './portfolio.scss';
 import React from 'react';
 import Portlist from '../portlist/Portlist';
 import { useEffect, useState } from 'react';
+import { featuredPortfolio, webPortfolio, unityPortfolio, UnrealPortfolio, AiPortfolio } from '../data';
 
 export default function Portfolio() {
   const [selected, setSelected] = React.useState("featured");
+  const [data, setData] = useState([]);
 
   const list =[
     {
@@ -28,6 +30,30 @@ export default function Portfolio() {
       title: "AI and ML",
     },
   ];
+
+  useEffect(() => {
+
+    switch(selected){
+      case "featured":
+        setData(featuredPortfolio);
+        break;
+      case "web":
+        setData(webPortfolio);
+        break;
+      case "unity":
+        setData(unityPortfolio);
+        break;
+      case "unreal engine":
+        setData(UnrealPortfolio);
+        break;
+      case "ai and ml":
+        setData(AiPortfolio);
+        break;
+      default:
+          setData(featuredPortfolio);
+    }
+  
+  }, [selected]);
   
 
   return (
@@ -44,31 +70,14 @@ export default function Portfolio() {
         ))}
       </ul>
       <div className='container'>
-        <div className='item'>
-          <img src="https://raw.githubusercontent.com/oguzhanozfe/Nba_Mvp_correlation/master/testPNG.PNG" 
-          alt="nba" />
-          <h3>NBA MVP Analysis</h3>
+        {data.map((d) => (
+          <div className='item'>
+            <img src={d.img}
+            alt=""
+             />
+            <h3>{d.title}</h3>
         </div>
-        <div className='item'>
-          <img src="https://raw.githubusercontent.com/oguzhanozfe/Nba_Mvp_correlation/master/testPNG.PNG" 
-          alt="nba" />
-          <h3>NBA MVP Analysis</h3>
-        </div>
-        <div className='item'>
-          <img src="https://raw.githubusercontent.com/oguzhanozfe/Nba_Mvp_correlation/master/testPNG.PNG" 
-          alt="nba" />
-          <h3>NBA MVP Analysis</h3>
-        </div>
-        <div className='item'>
-          <img src="https://raw.githubusercontent.com/oguzhanozfe/Nba_Mvp_correlation/master/testPNG.PNG" 
-          alt="nba" />
-          <h3>NBA MVP Analysis</h3>
-        </div>
-        <div className='item'>
-          <img src="https://raw.githubusercontent.com/oguzhanozfe/Nba_Mvp_correlation/master/testPNG.PNG" 
-          alt="nba" />
-          <h3>NBA MVP Analysis</h3>
-        </div>
+        ))}
       </div>
 
     </div>
