@@ -20,6 +20,19 @@
             color: white;
             font-size: 18px;
             margin-top: 50px;
+            
+            a{
+                color: #ffd700;
+                font-size: 18px;
+                font-weight: bold;
+                text-decoration: none;
+                margin-top: 50px;
+
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
         }
+
     }
 }

@@ -4,6 +4,7 @@ export const featuredPortfolio = [
       title: "E-commerce",
       img:
         "https://raw.githubusercontent.com/oguzhanozfe/E-commerce/main/e-web_home.PNG",
+      link:'https://github.com/oguzhanozfe/E-commerce',
     },
     {
       id: 2,
