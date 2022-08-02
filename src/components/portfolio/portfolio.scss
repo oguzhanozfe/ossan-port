@@ -7,7 +7,7 @@
 
     h1{
         font-size: 50px;
-        color: white;
+        color: #ffd700;
     }
     ul{
         margin: 10px;
@@ -27,16 +27,16 @@
         flex-wrap: wrap;
 
         .item{
-            width: 350px;
-            height: 250px;
+            width: 70%;
+            height: auto;
             border-radius: 20px;
-            border: 1px solid #f5f5f5;
             margin: 10px 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             transition: all 0.5s ease;
+            box-shadow: 4px 4px 7px 1px rgba(255,215,0,0.5);
 
             h3{
                 position: absolute;
@@ -49,6 +49,7 @@
                 height: 100%;
                 object-fit: cover;
                 z-index: 1;
+                
             }
 
             &:hover{

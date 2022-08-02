@@ -8,8 +8,13 @@ export default function Portfolio() {
   const [selected, setSelected] = React.useState("featured");
   const [data, setData] = useState([]);
   const [repos, setRepos] = useState([]);
+  const [featured, setFeatured] = useState([]);
 
   const list = [
+    {
+      id: "featured",
+      title: "Featured",
+    },
     {
       id: "web",
       title: "Web",
@@ -29,8 +34,23 @@ export default function Portfolio() {
       const res = await axios.post("https://api.github.com/graphql", {
         query: `
         query {
+          user(login: "oguzhanozfe") {
+            pinnedItems(first: 6, types: REPOSITORY) {
+              nodes {
+                ... on Repository {
+                  name
+                  createdAt
+                  description
+                  id
+                  url
+                  openGraphImageUrl
+                  }
+                }
+              }
+            }
           viewer {
-             repositories(first: 3, affiliations: [OWNER], privacy:PUBLIC) {
+            name
+             repositories(first: 3, affiliations: [OWNER], privacy:PUBLIC, orderBy:{field:CREATED_AT, direction:ASC}) {
                nodes {
                  name
                 createdAt
@@ -56,7 +76,8 @@ export default function Portfolio() {
         },
       });
 
-      await setRepos(res.data.data.viewer.repositories.nodes);
+      setRepos(res.data.data.viewer.repositories.nodes);
+      setFeatured(res.data.data.user.pinnedItems.nodes);
     };
 
     fetchData();
@@ -64,6 +85,9 @@ export default function Portfolio() {
   
   useEffect(() => {
     switch (selected) {
+      case "featured":
+        setData(featured);
+        break;
       case "web":
         setData(repos.filter(repo => repo.repositoryTopics.nodes[0].topic.name === "web"));
         break;
@@ -74,10 +98,10 @@ export default function Portfolio() {
         setData(repos.filter(repo => repo.repositoryTopics.nodes[0].topic.name === "ai" || repo.repositoryTopics.nodes[0].topic.name === "ml"));
         break;
       default:
-        setData(repos.filter(repo => repo.repositoryTopics.nodes[0].topic.name === "web"));
+        setData(featured);
     }
   
-  }, [selected, repos]);
+  }, [selected, repos, featured]);
   
 
   return (
