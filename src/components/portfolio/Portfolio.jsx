@@ -33,7 +33,7 @@ export default function Portfolio() {
     const fetchData = async () => {
       const res = await axios.post("https://api.github.com/graphql", {
         query: `
-        query {
+        {
           user(login: "oguzhanozfe") {
             pinnedItems(first: 6, types: REPOSITORY) {
               nodes {
@@ -44,30 +44,35 @@ export default function Portfolio() {
                   id
                   url
                   openGraphImageUrl
-                  }
                 }
               }
             }
+          }
           viewer {
             name
-             repositories(first: 3, affiliations: [OWNER], privacy:PUBLIC, orderBy:{field:CREATED_AT, direction:ASC}) {
-               nodes {
-                 name
+            repositories(
+              first: 1
+              affiliations: [OWNER]
+              privacy: PUBLIC
+              orderBy: {field: CREATED_AT, direction: DESC}
+            ) {
+              nodes {
+                name
                 createdAt
                 description
                 id
                 url
                 openGraphImageUrl
-                repositoryTopics (first:1) {
+                repositoryTopics(first: 1) {
                   nodes {
                     topic {
                       name
                     }
                   }
                 }
-               }
-             }
-           }
+              }
+            }
+          }
         }
         `
       },{
@@ -121,7 +126,7 @@ export default function Portfolio() {
       <div className="container">
         {data.map(d => (
           <a className="item" key={d.id} href={d.url} target="_blank" rel="noopener noreferrer">
-            <img src={d.openGraphImageUrl} alt={d.description} />
+            <img src={d.openGraphImageUrl} alt={d.description} datatype="gif"/>
             <h3>{d.name}</h3>
           </a>
         ))}
