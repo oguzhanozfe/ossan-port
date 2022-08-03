@@ -120,7 +120,7 @@ export default function Portfolio() {
       </ul>
       <div className="container">
         {data.map(d => (
-          <a className="item" key={d.id} href={d.url}>
+          <a className="item" key={d.id} href={d.url} target="_blank" rel="noopener noreferrer">
             <img src={d.openGraphImageUrl} alt={d.description} />
             <h3>{d.name}</h3>
           </a>
