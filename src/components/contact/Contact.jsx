@@ -20,6 +20,7 @@ export default function Contact() {
         <h2>Contact.</h2>
 
         <form onSubmit={handleSubmit}>
+          <input type="name" placeholder="Name" />
           <input type="text" placeholder="Email" />
           <textarea placeholder="Message" rows={5}></textarea>
           <button type="submit">Send</button>
