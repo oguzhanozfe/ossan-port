@@ -10,7 +10,7 @@ export default function Menu({ menuOpen, setMenuOpen }) {
             <div className="menu-item">Home</div>
           </a>
         </li>
-        <li onClick={() => setMenuOpen(false)}>
+        {/* <li onClick={() => setMenuOpen(false)}>
           <a href="#about">
             <div className="menu-item">About Me</div>
           </a>
@@ -19,7 +19,7 @@ export default function Menu({ menuOpen, setMenuOpen }) {
           <a href="#portfolio">
             <div className="menu-item">My Works</div>
           </a>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
