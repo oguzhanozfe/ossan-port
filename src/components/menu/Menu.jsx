@@ -20,13 +20,6 @@ export default function Menu({ menuOpen, setMenuOpen }) {
             <div className="menu-item">My Works</div>
           </a>
         </li>
-        <li onClick={() => setMenuOpen(false)}>
-          <div>
-            <a href="#contact">
-              <div className="menu-item">Contact</div>
-            </a>
-          </div>
-        </li>
       </ul>
     </div>
   );

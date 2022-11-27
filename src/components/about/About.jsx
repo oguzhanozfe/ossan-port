@@ -7,7 +7,7 @@ export default function About() {
       <div className='wrapper'>
       <h1>About Me</h1>
       <p>My name is Oguzhan. I am a Software Developer based in Istanbul<br/> 
-      I have a degree in Computer Science and lot of passion for creating things.<br/>
+      I have a degree in Computer Science <br/>
       From Game development to Fullstack i have experience in different areas.<br/>
       Right now i am imroving my Unreal Engine knowledge and working on my own project as hobby.<br/>
       I used to develop Vr game and mini games for Game Jams and myself in Unity.<br/>
