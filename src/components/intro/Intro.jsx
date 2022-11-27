@@ -25,10 +25,10 @@ export default function Intro() {
           <h3> 
             <span ref={mextRef}></span>
           </h3>
-          <h4>Need to help create things?</h4>
-          <a href="#contact" className="flat-button">
+          <h4>And I need to fix this site </h4>
+          {/* <a href="#contact" className="flat-button">
             CONTACT ME
-          </a>
+          </a> */}
         </div>
       
     </div>
