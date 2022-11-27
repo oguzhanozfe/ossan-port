@@ -1,7 +1,7 @@
 import Topbar from "./components/topbar/Topbar";
 import Intro from "./components/intro/Intro";
-import About from "./components/about/About";
-import Portfolio from "./components/portfolio/Portfolio";
+// import About from "./components/about/About";
+// import Portfolio from "./components/portfolio/Portfolio";
 import Menu from "./components/menu/Menu";
 import "./app.scss"
 import {useState} from "react";
